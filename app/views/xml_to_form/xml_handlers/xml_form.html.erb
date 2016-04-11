@@ -1,0 +1,12 @@
+<h2> XmlToRailsForm </h2>
+<%= form_for @xml_data, url: xml_update_path, method: :post do |f| %>
+    <% @node_set.each do |set| %>
+        <% if set.key?(:child_node) %>
+            <%= iterate_node(set, f) %>
+        <% else%>
+            <%= render partial: 'xml_to_form/xml_handlers/parent_node_form', locals: {node_hash: set, f: f} %>
+        <% end %>
+    <% end %>
+    <%= hidden_field_tag :file_content, @file%>
+    <%= submit_tag 'Update xml' %>
+<% end %>

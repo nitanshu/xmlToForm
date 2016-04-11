@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.version     = XmlToForm::VERSION
   s.authors     = ["nitanshu verma"]
   s.email       = ["nitanshu@headerlabs.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of XmlToForm."
-  s.description = "TODO: Description of XmlToForm."
+  s.homepage    = "homepage"
+  s.summary     = "It converts a xml file to rails form and you can update it through that form."
+  s.description = "As it is basically a converter of xml file to rails form it takes help from nokogiri do some hacks of nokogiri and update the xml file and create a updated.xml in the current directory."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]

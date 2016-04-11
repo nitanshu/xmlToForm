@@ -1,0 +1,28 @@
+<fieldset>
+  <% node_hash.each do |k,v|%>
+      <% if k != :child_node%>
+          <legend><%= k.split('_').first %></legend>
+          <% if v.is_a?(String) %>
+              <%= f.label k.split('_').first %>
+              <%= f.text_field k %>
+          <% else %>
+              <% v.each do |k1,v1|%>
+                  <%= f.label k1.split('_').first %>
+                  <%= f.text_field k1 %>
+              <% end %>
+          <% end %>
+      <% else %>
+          <%if v.is_a?(Array)%>
+              <% v.each do |n|%>
+               <%== iterate_node(n, f) %>
+              <% end %>
+          <%else%>
+              <%= iterate_node(v, f) %>
+          <% end %>
+      <% end %>
+  <% end %>
+</fieldset>
+
+
+
+
