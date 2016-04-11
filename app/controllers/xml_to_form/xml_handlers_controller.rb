@@ -1,5 +1,6 @@
 require_dependency "xml_to_form/application_controller"
 require 'noko_hacks'
+require_dependency 'xml_to_form/xml_handler.rb'
 
 module XmlToForm
   class XmlHandlersController < ApplicationController
