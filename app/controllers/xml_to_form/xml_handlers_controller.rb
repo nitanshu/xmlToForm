@@ -23,7 +23,7 @@ module XmlToForm
 
     def xml_update
       @xml = XmlHandler.new(params[:xml_data])
-      params[:xml_data].each do |key,value|
+      params[:xml_handler].each do |key,value|
         node = @xml_obj.at(decode_node_path(key))
         update_xml(node, key, value)
         if !node.content.empty? && !node.attributes.empty?
