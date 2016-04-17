@@ -16,7 +16,7 @@ And then execute:
 
 To use this gem you just need to mount it in your route file *config/routes.rb*
 
-<tt> mount XmlToForm::Engine => "/" </tt>
+<tt> mount XmlToForm::Engine => "/xml_to_form" </tt>
 
 Then to go to the dashboard hit the url where you have mounted your gem:
 
