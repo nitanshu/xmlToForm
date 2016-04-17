@@ -16,9 +16,7 @@ module XmlToForm
     end
 
     def xml_form
-      # logger.info "============#{@attr_accessors.inspect}"
       @xml_data = XmlHandler.new(@attr_accessors)
-      # logger.info "=====---------#{@xml_data.inspect}"
     end
 
     def xml_update

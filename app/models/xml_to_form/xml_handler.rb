@@ -6,7 +6,6 @@ module XmlToForm
     extend ActiveModel::Callbacks
 
     def after_initialize(some_hash)
-      logger.info "-----------#{self.inspect}=============#{some_hash.inspect}"
       some_hash.each do |key, value|
         self.send("#{key}=", value) rescue nil
       end if some_hash.is_a?(Hash)
