@@ -4,7 +4,7 @@ PATH
     xml_to_form (0.0.1)
       activemodel
       nokogiri
-      rails (~> 4.2.5)
+      rails
 
 GEM
   remote: https://rubygems.org/
