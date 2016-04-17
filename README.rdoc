@@ -1,7 +1,7 @@
 = XmlTowForm
 
-XmlToForm gem enables you to upload any xml file and it will convert it to nested *Rails Form* with the help of '<fieldset>' and
- '<legend>' tags, then you can update that file and you will get an 'updated.xml' which will be the updated file for your xml.
+XmlToForm gem enables you to upload any xml file and it will convert it to nested `Rails Form` with the help of *<fieldset>* and
+ *<legend>* tags, then you can update that file and you will get an 'updated.xml' which will be the updated file for your xml.
 
 == Installation
 
