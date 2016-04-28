@@ -18,7 +18,7 @@ To use this gem you just need to mount it in your route file *config/routes.rb*
 
 <tt> mount XmlToForm::Engine => "/" </tt>
 
-Then go to the dashboard hit the url where you have mounted your gem:
+Then hit the url <tt> localhost:3000/upload_file</tt>:
 
-then you will see a file upload button upload a xml file.
+then you will see a file upload button to upload a xml file after uploading a file you will see nested rails form for updating xml file whatever value you will update it will update the xml file and create a updated.xml in root of the application.
 
