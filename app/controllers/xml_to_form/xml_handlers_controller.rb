@@ -5,7 +5,7 @@ require_dependency 'xml_to_form/xml_handler.rb'
 module XmlToForm
   class XmlHandlersController < ApplicationController
     include NokoHacks
-    before_filter :fetch_data, except:  [:upload_file]
+    before_filter :fetch_data, except: [:upload_file]
 
 ## @node_set is an array of each node with child and attributes which is representing the form in recursive way
 ## @attr_accessors is an hash where key is xml tag and their Base64 encoded path and value is there values
@@ -21,21 +21,21 @@ module XmlToForm
 
     def xml_update
       @xml = XmlHandler.new(params[:xml_data])
-      params[:xml_handler].each do |key,value|
+      params[:xml_handler].each do |key, value|
         node = @xml_obj.at(decode_node_path(key))
         update_xml(node, key, value)
         if !node.content.empty? && !node.attributes.empty?
           node.content = value
         end
       end
-      File.open('updated.xml', 'w') {|f| f.write(@xml_obj)}
-      redirect_to root_path
+      File.open('public/updated.xml', 'w') { |f| f.write(@xml_obj) }
+      send_file(File.join(Rails.root, 'public', 'updated.xml'))
     end
 
     private
     def fetch_data
-      params[:file]? @file= File.read(params[:file].tempfile) : @file = params[:file_content]
-      @node_set, @attr_accessors , @xml_obj= XmlHandler.noko_meta_data(@file)
+      params[:file] ? @file= File.read(params[:file].tempfile) : @file = params[:file_content]
+      @node_set, @attr_accessors, @xml_obj= XmlHandler.noko_meta_data(@file)
     end
   end
 end
