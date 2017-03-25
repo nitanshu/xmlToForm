@@ -5,14 +5,14 @@ require_dependency 'xml_to_form/xml_handler.rb'
 module XmlToForm
   class XmlHandlersController < ApplicationController
     include NokoHacks
-    before_filter :fetch_data, except: [:upload_file]
+    before_action :fetch_data, except: [:upload_file]
 
-## @node_set is an array of each node with child and attributes which is representing the form in recursive way
-## @attr_accessors is an hash where key is xml tag and their Base64 encoded path and value is there values
-## @xml_obj is only the parsed object of nokogiri from xml
-## @xml_data is the initialized object with their values which represents the form
+    ## @node_set is an array of each node with child and attributes which is representing the form in recursive way
+    ## @attr_accessors is an hash where key is xml tag and their Base64 encoded path and value is there values
+    ## @xml_obj is only the parsed object of nokogiri from xml
+    ## @xml_data is the initialized object with their values which represents the form
+
     def upload_file
-
     end
 
     def xml_form

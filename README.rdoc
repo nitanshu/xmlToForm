@@ -1,6 +1,6 @@
 = XmlToForm
 
-XmlToForm gem enables you to upload any xml file and it will convert it to nested Rails Form with the help of <fieldset> and <legend> tags, then you can update that file and you will get an <tt>updated.xml</tt> which will be the updated file for your xml in root of the application.
+XmlToForm gem enables you to upload any xml file and it will convert it to nested Rails Form with the help of <fieldset> and <legend> tags, then you can update that file and you will get an <tt>updated.xml</tt> file.
 
 == Installation
 
@@ -24,5 +24,5 @@ To use this gem you just need to mount it in your route file *config/routes.rb*
 
 Then hit the url <tt> localhost:3000/xml_handler/upload_file</tt>:
 
-then you will see a file upload button to upload a xml file after uploading a file you will see nested rails form for updating xml file whatever value you will update it will update the xml file and create a updated.xml in root of the application.
+then you will see a file upload button to upload a xml file after uploading a file you will see nested rails form for updating xml file whatever value you will update it will update the xml file and will create an updated.xml file.
 
