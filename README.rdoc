@@ -26,7 +26,7 @@ To use this gem you just need to mount it in your route file *config/routes.rb*
 
 <tt>mount XmlToForm::Engine => "/xml_handler" </tt>
 
-Then hit the url <tt> localhost:3000/xml_handler/</tt>:
+Then hit the url <tt> localhost:3000/xml_handler</tt>:
 
 then you will see a file upload button to upload a xml file after uploading a file you will see nested rails form for updating xml file whatever value you will update it will update the xml file and will create an updated.xml file.
 
