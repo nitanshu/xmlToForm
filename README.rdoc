@@ -16,6 +16,10 @@ Copy the migration file:
 
 <tt>$ rake xml_to_form:install:migrations</tt>
 
+Migrate it in db:
+
+<tt>$ rake db:migrate</tt>
+
 == Usage
 
 To use this gem you just need to mount it in your route file *config/routes.rb*

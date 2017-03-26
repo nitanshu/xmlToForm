@@ -3,3 +3,4 @@ log/*.log
 pkg/
 test/**/*
 .idea/
+*.gem
