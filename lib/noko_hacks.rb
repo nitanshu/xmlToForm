@@ -76,7 +76,7 @@ module NokoHacks
 
         when [false, true, false] then   _temp.push({(node.name + encode_node_path(node)).gsub('-','_')  => node.attributes.transform_keys{|key| (key + encode_node_path(node)).gsub('-','_')}, :child_node => node.child_node_ds(attr_accessor_hash)})&& node.attributes.each {|key,value| attr_accessor_hash.merge!((key + encode_node_path(node)).gsub('-','_') => value.value)}
 
-        when [false, false, false] then node_array.push({(node.name + encode_node_path(node)).gsub('-','_') => (node.attributes.transform_keys{|key| (key + encode_node_path(node)).gsub('-','_')}).merge!((node.name + encode_node_path(node)).gsub('-','_') => node.content)}) && node.attributes.each {|key,value| attr_accessor_hash.merge!((key + encode_node_path(node)).gsub('-','_') => value.value)} && attr_accessor_hash.merge!((node.name + encode_node_path(node)).gsub('-','_') => node.content)
+        when [false, false, false] then _temp.push({(node.name + encode_node_path(node)).gsub('-','_') => (node.attributes.transform_keys{|key| (key + encode_node_path(node)).gsub('-','_')}).merge!((node.name + encode_node_path(node)).gsub('-','_') => node.content)}) && node.attributes.each {|key,value| attr_accessor_hash.merge!((key + encode_node_path(node)).gsub('-','_') => value.value)} && attr_accessor_hash.merge!((node.name + encode_node_path(node)).gsub('-','_') => node.content)
       end
     end
     return _temp
